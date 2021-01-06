@@ -23,6 +23,10 @@ $ go test -count=1 ./... -coverprofile=coverage.out -coverpkg=github.com/nickgri
 ok      github.com/nickgrim/coverpkgtest/bar    0.002s  coverage: 0.0% of statements in github.com/nickgrim/coverpkgtest/bar
 ok      github.com/nickgrim/coverpkgtest/foo    0.001s  coverage: 0.0% of statements in github.com/nickgrim/coverpkgtest/bar
 
+$ go test -count=1 ./... -coverprofile=coverage.out -coverpkg=github.com/nickgrim/coverpkgtest/foo,github.com/nickgrim/coverpkgtest/bar
+ok      github.com/nickgrim/coverpkgtest/bar    0.001s  coverage: 0.0% of statements in github.com/nickgrim/coverpkgtest/foo, github.com/nickgrim/coverpkgtest/bar
+ok      github.com/nickgrim/coverpkgtest/foo    0.001s  coverage: 50.0% of statements in github.com/nickgrim/coverpkgtest/foo, github.com/nickgrim/coverpkgtest/bar
+
 $ go test -count=1 ./... -coverprofile=coverage.out -coverpkg=github.com/nickgrim/coverpkgtest/{foo,bar}
 ok      github.com/nickgrim/coverpkgtest/bar    0.001s  coverage: 0.0% of statements in github.com/nickgrim/coverpkgtest/bar
 ok      github.com/nickgrim/coverpkgtest/foo    0.003s  coverage: 0.0% of statements in github.com/nickgrim/coverpkgtest/bar
