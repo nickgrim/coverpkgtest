@@ -1,7 +1,8 @@
 #!/bin/bash -x
 
-go test -count=1 ./... -coverprofile=/dev/null
-go test -count=1 ./... -coverprofile=/dev/null -coverpkg=github.com/nickgrim/coverpkgtest/bar
-go test -count=1 ./... -coverprofile=/dev/null -coverpkg=github.com/nickgrim/coverpkgtest/foo
-go test -count=1 ./... -coverprofile=/dev/null -coverpkg=github.com/nickgrim/coverpkgtest/foo,github.com/nickgrim/coverpkgtest/bar
-go test -count=1 ./... -coverprofile=/dev/null -coverpkg=./...
+go test -count=1 ./... -cover
+go test -count=1 ./... -cover -coverpkg=github.com/nickgrim/coverpkgtest/bar
+go test -count=1 ./... -cover -coverpkg=github.com/nickgrim/coverpkgtest/foo
+go test -count=1 ./... -cover -coverpkg=github.com/nickgrim/coverpkgtest/foo,github.com/nickgrim/coverpkgtest/bar
+go test -count=1 ./... -cover -coverpkg=all
+go test -count=1 ./... -cover -coverpkg=./...
